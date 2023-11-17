@@ -15,9 +15,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import tj.behruz.jetpackcomposebasics.data.Screens
 import tj.behruz.jetpackcomposebasics.ui.screens.MainScreen
+import tj.behruz.jetpackcomposebasics.ui.screens.cards.CardsInCompose
+import tj.behruz.jetpackcomposebasics.ui.screens.image.ImageInJetpack
 import tj.behruz.jetpackcomposebasics.ui.screens.layouts.ColumnLayoutExample
 import tj.behruz.jetpackcomposebasics.ui.screens.layouts.JetpackComposeLayouts
 import tj.behruz.jetpackcomposebasics.ui.screens.layouts.RowLayoutExample
+import tj.behruz.jetpackcomposebasics.ui.screens.text.TextFieldsInCompose
+import tj.behruz.jetpackcomposebasics.ui.screens.text.TextScreen
 import tj.behruz.jetpackcomposebasics.ui.theme.JetpackComposeBasicsTheme
 
 class MainActivity : ComponentActivity() {
@@ -45,29 +49,29 @@ fun AppNavigation() {
             JetpackComposeLayouts(navController = navController)
         }
         composable(Screens.TEXTS.route) {
-
+            TextScreen()
         }
 
         composable(Screens.TEXTFIELDS.route) {
-
+            TextFieldsInCompose()
 
         }
 
         composable(Screens.CARDS.route) {
-
+            CardsInCompose()
         }
 
         composable(Screens.IMAGES.route) {
-
+            ImageInJetpack()
         }
 
         composable(Screens.LISTS.route) {
 
         }
-        composable(Screens.COLUMN.route){
+        composable(Screens.COLUMN.route) {
             ColumnLayoutExample()
         }
-        composable(Screens.ROW.route){
+        composable(Screens.ROW.route) {
             RowLayoutExample()
         }
 
