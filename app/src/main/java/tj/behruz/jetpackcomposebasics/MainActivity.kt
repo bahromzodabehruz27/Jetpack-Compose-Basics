@@ -15,6 +15,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import tj.behruz.jetpackcomposebasics.data.Screens
 import tj.behruz.jetpackcomposebasics.ui.screens.MainScreen
+import tj.behruz.jetpackcomposebasics.ui.screens.layouts.ColumnLayoutExample
+import tj.behruz.jetpackcomposebasics.ui.screens.layouts.JetpackComposeLayouts
+import tj.behruz.jetpackcomposebasics.ui.screens.layouts.RowLayoutExample
 import tj.behruz.jetpackcomposebasics.ui.theme.JetpackComposeBasicsTheme
 
 class MainActivity : ComponentActivity() {
@@ -36,10 +39,10 @@ fun AppNavigation() {
     NavHost(navController = navController, startDestination = Screens.MAIN.route) {
 
         composable(Screens.MAIN.route) {
-            MainScreen()
+            MainScreen(navController = navController)
         }
         composable(Screens.LAYOUTS.route) {
-
+            JetpackComposeLayouts(navController = navController)
         }
         composable(Screens.TEXTS.route) {
 
@@ -61,6 +64,13 @@ fun AppNavigation() {
         composable(Screens.LISTS.route) {
 
         }
+        composable(Screens.COLUMN.route){
+            ColumnLayoutExample()
+        }
+        composable(Screens.ROW.route){
+            RowLayoutExample()
+        }
+
 
     }
 }

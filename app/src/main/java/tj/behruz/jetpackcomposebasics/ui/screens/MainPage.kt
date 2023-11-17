@@ -1,5 +1,6 @@
 package tj.behruz.jetpackcomposebasics.ui.screens
 
+import android.widget.AdapterView.OnItemClickListener
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,10 +17,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import tj.behruz.jetpackcomposebasics.data.ItemClickHandler
+import tj.behruz.jetpackcomposebasics.data.Screens
 import tj.behruz.jetpackcomposebasics.ui.Utils
 
 @Composable
-fun MainScreen() {
+fun MainScreen(navController: NavController) {
     Scaffold { paddingValues: PaddingValues ->
         Column(
             modifier = Modifier
@@ -43,7 +48,9 @@ fun MainScreen() {
                     .fillMaxWidth()
                     .height(52.dp)
                     .padding(Utils.defaultPadding),
-                onClick = { /*TODO*/ }) {
+                onClick = {
+                    navController.navigate(Screens.LAYOUTS.route)
+                }) {
                 Text(text = "Compose Layouts", color = Color.White)
             }
 
@@ -124,6 +131,6 @@ fun MainScreen() {
 @Composable
 fun MainPreview() {
     MaterialTheme {
-        MainScreen()
+        MainScreen(rememberNavController())
     }
 }
