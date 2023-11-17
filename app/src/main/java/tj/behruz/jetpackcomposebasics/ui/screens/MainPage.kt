@@ -61,7 +61,7 @@ fun MainScreen(navController: NavController) {
                     .fillMaxWidth()
                     .height(52.dp)
                     .padding(Utils.defaultPadding),
-                onClick = { /*TODO*/ }) {
+                onClick = { navController.navigate(Screens.TEXTS.route) }) {
                 Text(text = "Compose Texts", color = Color.White)
             }
 
@@ -72,19 +72,19 @@ fun MainScreen(navController: NavController) {
                     .fillMaxWidth()
                     .height(52.dp)
                     .padding(Utils.defaultPadding),
-                onClick = { /*TODO*/ }) {
+                onClick = { navController.navigate(Screens.TEXTFIELDS.route) }) {
                 Text(text = "Compose TextsFields", color = Color.White)
             }
 
 
             Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = MaterialTheme.colors.surface
+                backgroundColor = MaterialTheme.colors.secondaryVariant
             ),
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(52.dp)
                     .padding(Utils.defaultPadding),
-                onClick = { /*TODO*/ }) {
+                onClick = { navController.navigate(Screens.IMAGES.route) }) {
                 Text(text = "Compose Images", color = Color.White)
             }
 
@@ -95,7 +95,7 @@ fun MainScreen(navController: NavController) {
                     .fillMaxWidth()
                     .height(52.dp)
                     .padding(Utils.defaultPadding),
-                onClick = { /*TODO*/ }) {
+                onClick = { navController.navigate(Screens.CARDS.route) }) {
                 Text(text = "Compose Cards", color = Color.White)
             }
 
